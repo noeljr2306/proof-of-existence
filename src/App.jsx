@@ -26,7 +26,7 @@ export default function App() {
           </h2>
           <p className="text-slate-500 mt-1 max-w-lg mx-auto">
             Generate a cryptographic fingerprint of your document and timestamp
-            it permanently on the Ethereum blockchain — without ever uploading
+            it permanently on the Ethereum blockchain without ever uploading
             the file itself.
           </p>
         </div>
