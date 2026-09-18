@@ -31,13 +31,22 @@ The app computes a SHA-256 fingerprint locally, stores only that fingerprint and
 
 ## How it works
 
-````mermaid
+```mermaid
 flowchart LR
-	A[Select a file] --> B[SHA-256 in browser]
-	B --> C{Already registered?}
-	C -->|Yes| D[Show existing proof]
-	C -->|No| E[Estimate gas]
-Verification follows the same first step: hash the selected file locally, call `verifyDoc` on the contract, and report whether an exact match exists. A one-byte change produces a different fingerprint.
+    A[Select a file] --> B[SHA-256 in browser]
+    B --> C{Already registered?}
+    C -->|Yes| D[Show existing proof]
+    C -->|No| E[Estimate gas]
+```
+
+### Verification Flow
+Verification follows the same first step:
+1. **Hash the selected file** locally in the browser.
+2. **Call `verifyDoc`** on the smart contract.
+3. **Report** whether an exact match exists.
+
+*Note: Because of how cryptographic hashing works, even a one-byte change in the file produces an entirely different fingerprint.*
+
 
 ## Quick start
 
